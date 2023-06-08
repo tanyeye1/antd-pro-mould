@@ -1,0 +1,72 @@
+// {
+//   "compilerOptions": {
+//     "target": "esnext",
+//     "module": "esnext",
+//     "moduleResolution": "node",
+//     "importHelpers": true,
+//     "jsx": "preserve",
+//     "esModuleInterop": true,
+//     "sourceMap": true,
+//     "baseUrl": "./",
+//     "skipLibCheck": true,
+//     "experimentalDecorators": true,
+//     "strict": false,
+//     "resolveJsonModule": true,
+//     "allowSyntheticDefaultImports": true,
+//     "paths": {
+//       "@/*": ["./src/*"],
+//       "@@/*": ["./src/.umi/*"],
+//       "@@test/*": ["./src/.umi-test/*"]
+//     }
+//   },
+//   "include": ["./**/*.d.ts", "./**/*.ts", "./**/*.tsx"],
+//   "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"] //编译排除哪些文件
+
+// }
+{
+  "compilerOptions": {
+    "noImplicitAny": false, // 不需要显示声明 any 类型
+    "outDir": "build/dist",
+    "module": "esnext", //代码的模块系统为ES6标准的 esnext 系统
+    "target": "esnext", // 编译器编译成的 javascript 版本
+    "lib": ["esnext", "dom"], // 需要引用的库文件
+    "sourceMap": true,
+    "baseUrl": ".",
+    "jsx": "react-jsx", //允许编译react代码
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node", //编译器的工作方式
+    "resolveJsonModule": true, // 允许编译JSON文件
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "allowJs": true, //允许js和ts文件混合编译
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "strict": false, // 严格模式
+    // "noEmit": true, // 编译错误时不会生成js代码
+    // "isolatedModules": true, // 编译器会将每个文件作为单独的模块使用
+    "paths": {
+      // 文件路径别名
+      "@/*": ["./src/*"],
+      "@@/*": ["./src/.umi/*"]
+    },
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  },
+  "include": [
+    // 编译包含哪些文件
+    "src/mock/**/*",
+    "src/**/*",
+    "playwright.config.ts",
+    "tests/**/*",
+    "test/**/*",
+    "__test__/**/*",
+    "typings/**/*",
+    "config/**/*",
+    ".eslintrc.js",
+    ".prettierrc.js",
+    "jest.config.js",
+    "src/mock/*",
+    "mock"
+  ],
+  "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"] //编译排除哪些文件
+}

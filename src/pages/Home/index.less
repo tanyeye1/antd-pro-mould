@@ -1,0 +1,97 @@
+.home  {
+  width: 100%;
+  .leftContent {
+    width: 65%;
+    .myNav {
+      width: 100%;
+      .tag {
+        width: 160px;
+        background-color: #f6f8f9;
+        padding: 5px 15px 5px 10px;
+        border-radius: 1px;
+      }
+      .addTag {
+        border: 1px solid #ccd0d5;
+        padding: 5px 15px 5px 10px;
+        width: 160px;
+        border-radius: 1px;
+      }
+    }
+    .trialTutorial {
+      width: 100%;
+      .box {
+        width: 265px;
+        height: 42px;
+        .pic {
+          width: 42px;
+          height: 42px;
+          background-color: #f6f8f9;
+          
+        }
+        .description {
+          font-size: 12px;
+          color: #808080;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .rightConent {
+    flex: 1;
+    padding-left: 10px;
+    .phone {
+      height: 50px;
+      background-color: #313336;
+    }
+    .serve {
+      color: #808080;
+    }
+    .qrcode {
+      width: 100%;
+      .wx {
+        flex: 1;
+      }
+      .app {
+        flex: 1;
+        position: relative;
+        .tip {
+          position: absolute;
+          top: 0;
+          left: 0;
+          .triangle {
+            width: 0;
+            height: 0;
+            // border-left: 50px solid transparent;
+            border-right: 40px solid transparent; 
+            border-bottom: 40px solid transparent;
+            border-top: 40px solid #05c650; /* 修改为你想要的颜色 */
+            position: relative;
+            .triangleText {
+              position: absolute;
+              transform: rotate(315deg);
+              top: -34px;
+              color: white;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .code {
+        width: 100px;
+        height: 100px;
+        background-color: #313336;
+        margin: 0 auto;
+      }
+    }
+    .time {
+      color: #ababab;
+    }
+    .more {
+      color: #1c88ff;
+      cursor: pointer;
+    }
+  }
+}
+.ant-btn-primary {
+  background-color: #1890ff;
+}

@@ -1,0 +1,83 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+.ant-pro-sider.ant-layout-sider.ant-pro-sider-fixed {
+  left: unset;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+.ant-btn-primary {
+  background-color: #1677ff;
+}
+// .ant-menu-item-selected::after,
+// .ant-menu-submenu-selected::after {
+//   border-bottom: 2px solid black !important;
+// }
+
+// .ant-pro-layout .ant-pro-top-nav-header-base-menu.ant-menu-light .ant-menu-item-selected,
+// .ant-pro-layout .ant-pro-base-menu.ant-menu-horizontal .ant-menu-item-selected,
+// .ant-menu-submenu-selected {
+//   position: relative;
+//   // color: #1890ff !important;
+// }
+
+// .ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after {
+//   border-bottom-width: 2px;
+//   border-bottom-color: #1890ff;
+//   position: absolute;
+//   // bottom: -5px;
+// }
+// .ant-menu-light.ant-menu-horizontal >.ant-menu-item::after {
+//   transition: none;
+// }
+// .ant-menu-light .ant-menu-item-selected a {
+//   color: #1890ff;
+// }
