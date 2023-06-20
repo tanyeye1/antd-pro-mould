@@ -9,6 +9,6 @@ module.exports = {
     // 你的自定义规则
     'no-nested-ternary': 0,
     // 'no-unused-vars': 0,
-    '@typescript-eslint/no-unused-vars': ['off'],
+    '@typescript-eslint/no-unused-vars': 0,
   },
 };
