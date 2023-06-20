@@ -55,8 +55,6 @@ export const layout: any = ({ initialState, setInitialState }) => {
     onPageChange: () => {
       const { location } = history;
       const { search, pathname } = window.location;
-
-      console.log('location', location, history);
     },
     onSelect: (e) => {
       console.log('e', e);
