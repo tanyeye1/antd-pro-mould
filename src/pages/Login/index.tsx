@@ -4,6 +4,7 @@ import { LoginForm, ProFormCaptcha, ProFormText } from '@ant-design/pro-componen
 import { Button, message, Modal, Radio, Space, Tabs } from 'antd';
 import React, { useState } from 'react';
 import './index.less';
+import { history } from '@umijs/max';
 // import logo from '@/img/logo.png';
 
 const Login: React.FC = () => {
@@ -22,36 +23,15 @@ const Login: React.FC = () => {
   ];
   const handleSubmit = async (values: any) => {
     console.log('values', values);
-    // history.push('/home')
-    await login({
-      account: values.userAccount,
-      passwd: values.userPass,
-    }).then((res) => {
-      console.log('res', res);
-    });
+    history.push('/home')
+    // await login({
+    //   account: values.userAccount,
+    //   passwd: values.userPass,
+    // }).then((res) => {
+    //   console.log('res', res);
+    // });
     try {
-      //   登录
-      //   const msg: any = await login(values);
-      //   if (msg.code === '0000') {
-      //     let firstPath: string = '';
-      //     setUser(msg);
-      //     localStorage.setItem('userId', msg.userId);
-      //     localStorage.setItem('userAccount', msg.userAccount);
-      //     localStorage.setItem('userName', msg.userName);
-      //     setIsLogin(true);
-      //     message.success('登录成功！');
-      //     if (msg.menuList.length < 1) {
-      //       history.push('/noDataPage');
-      //     } else {
-      //       firstPath = getFirstPath(hasPowerRoutes(msg.menuList, routersMap));
-      //       history.push(firstPath);
-      //     }
-      //     setInitialState({
-      //       ...initialState,
-      //       // userId: msg.userId,
-      //       firstPath,
-      //     });
-      //   }
+      
     } catch (error) {
       message.error('登录失败，请重试！');
     }

@@ -7,7 +7,9 @@ import {
 } from '@ant-design/icons';
 import { Button, Card, Select, Space, Tabs } from 'antd';
 import './index.less';
+import { createEffect, createSignal } from 'solid-js';
 export default function Home() {
+  const [test, setTest] = createSignal(0)
   const handleChange = (value) => {
     console.log('value', value);
   };
@@ -44,14 +46,12 @@ export default function Home() {
       children: `Content of Tab Pane 2`,
     },
   ];
+  createEffect(() => {
+    console.log('test', test())
+  })
+  console.log('test', test())
   return (
     <div className=" home flex">
-      {/* <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
-        <div>
-          <div className="text-xl font-medium text-black">ChitChat</div>
-          <p className="text-slate-500">You have a new message!</p>
-        </div>
-      </div> */}
       {/* 首页左边 */}
       <div className="leftContent ">
         {/* 数据展示 */}

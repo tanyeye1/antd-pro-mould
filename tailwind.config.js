@@ -9,10 +9,9 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  purge: [
-    './src/**/*.html',
-    './src/**/*.tsx',
-    './src/**/*.jsx',
-  ],
+  // purge: [
+  //   './src/**/*.html',
+  //   './src/**/*.tsx',
+  //   './src/**/*.jsx',
+  // ],
 }
-
