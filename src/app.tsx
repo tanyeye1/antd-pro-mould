@@ -39,7 +39,6 @@ export const layout: any = ({ initialState, setInitialState }) => {
     // actionsRender: () => [<SelectLang key="SelectLang" />],
     avatarProps: {
       // src: initialState?.currentUser?.avatar,
-      title: '???',
       render: (_, avatarChildren) => {
         return (
           <AvatarDropdown>
