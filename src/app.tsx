@@ -1,17 +1,11 @@
 import Footer from '@/components/Footer';
-import { SelectLang } from '@/components/RightContent';
-import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
-import { RunTimeLayoutConfig } from '@umijs/max';
-import { history, Link } from '@umijs/max';
+import { history } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
-import { errorConfig } from './requestErrorConfig';
-import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
-import React from 'react';
-import { stringify } from 'querystring';
-import './app.css'
+import './app.css';
 import { AvatarDropdown } from './components/RightContent/AvatarDropdown';
+import { errorConfig } from './requestErrorConfig';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 
@@ -24,8 +18,8 @@ export async function getInitialState(): Promise<{
   loading?: boolean;
   fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
 }> {
-  console.log('first')
-  
+  console.log('first');
+
   return {
     settings: defaultSettings as Partial<LayoutSettings>,
   };
@@ -37,37 +31,36 @@ export const layout: any = ({ initialState, setInitialState }) => {
     menu: {
       params: {},
       request: (params: any, defaultMenuData: any) => {
-        console.log('params', params, defaultMenuData)
+        console.log('params', params, defaultMenuData);
         // return defaultMenuData
-        return defaultMenuData
-      }
+        return defaultMenuData;
+      },
     },
     // actionsRender: () => [<SelectLang key="SelectLang" />],
     avatarProps: {
       // src: initialState?.currentUser?.avatar,
       title: '???',
       render: (_, avatarChildren) => {
-        return <AvatarDropdown>
-          <img
-            alt=""
-            className="info-logo"
-            src="https://www.zjaqsc.com/res/images/avatars/avatar4.png"
-          />
-        </AvatarDropdown>;
+        return (
+          <AvatarDropdown>
+            <img
+              alt=""
+              className="info-logo"
+              src="https://www.zjaqsc.com/res/images/avatars/avatar4.png"
+            />
+          </AvatarDropdown>
+        );
       },
     },
-    // waterMarkProps: {
-    //   content: initialState?.currentUser?.name,
-    // },
     footerRender: () => <Footer />,
     onPageChange: () => {
       const { location } = history;
       const { search, pathname } = window.location;
 
-      console.log('location', location, history)
+      console.log('location', location, history);
     },
     onSelect: (e) => {
-      console.log('e', e)
+      console.log('e', e);
     },
     menuHeaderRender: undefined,
     // 自定义 403 页面
@@ -103,5 +96,5 @@ export const layout: any = ({ initialState, setInitialState }) => {
  */
 export const request = {
   ...errorConfig,
-  // URL: 
+  // URL:
 };
