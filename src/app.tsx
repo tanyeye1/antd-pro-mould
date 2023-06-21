@@ -54,7 +54,6 @@ export const layout: any = ({ initialState, setInitialState }) => {
     footerRender: () => <Footer />,
     onPageChange: () => {
       const { location } = history;
-      const { search, pathname } = window.location;
     },
     onSelect: (e) => {
       console.log('e', e);
