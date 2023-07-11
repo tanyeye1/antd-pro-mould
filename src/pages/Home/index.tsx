@@ -6,10 +6,10 @@ import {
   QuestionCircleOutlined,
 } from '@ant-design/icons';
 import { Button, Card, Select, Space, Tabs } from 'antd';
-import './index.less';
 import { createEffect, createSignal } from 'solid-js';
+import './index.less';
 export default function Home() {
-  const [test, setTest] = createSignal(0)
+  const [test, setTest] = createSignal(0);
   const handleChange = (value) => {
     console.log('value', value);
   };
@@ -21,22 +21,22 @@ export default function Home() {
       key: 'notice',
       label: `公告`,
       children: (
-        <Space direction='vertical'>
+        <Space direction="vertical">
           <div>
             <div>【升级】2023年6月8日北京，上海， 青岛，西安部分智能接入网关接入点后...</div>
-            <div className='time'>
-              <HistoryOutlined />&nbsp;
-              2023-06-05
+            <div className="time">
+              <HistoryOutlined />
+              &nbsp; 2023-06-05
             </div>
           </div>
           <div>
             <div>【升级】2023年6月8日北京，上海， 青岛，西安部分智能接入网关接入点后...</div>
-            <div className='time'>
-              <HistoryOutlined />&nbsp;
-              2023-06-05
+            <div className="time">
+              <HistoryOutlined />
+              &nbsp; 2023-06-05
             </div>
           </div>
-          <div className='more'>查看更多</div>
+          <div className="more">查看更多</div>
         </Space>
       ),
     },
@@ -47,11 +47,11 @@ export default function Home() {
     },
   ];
   createEffect(() => {
-    console.log('test', test())
-  })
-  console.log('test', test())
+    console.log('test', test());
+  });
+  console.log('test', test());
   return (
-    <div className=" home flex">
+    <div className=" home flex layout-content">
       {/* 首页左边 */}
       <div className="leftContent ">
         {/* 数据展示 */}
@@ -119,7 +119,7 @@ export default function Home() {
         </div>
         {/* 我的导航 */}
         <div className="myNav mt-10">
-          <Card  className="shadow hover:shadow-lg">
+          <Card className="shadow hover:shadow-lg">
             <div className="text-lg font-bold mb-3 flex justify-between">
               <div>我的导航</div>
               <div>
@@ -139,7 +139,6 @@ export default function Home() {
                   <div className="tag">控制台首页</div>
                   <div className="tag">控制台首页</div>
                   <div className="tag">控制台首页</div>
-
                 </Space>
               </div>
             </div>
@@ -276,7 +275,7 @@ export default function Home() {
           </div>
           {/* 产品信息 */}
           <Card className="shadow hover:shadow-lg">
-            <div className='text-lg font-bold'>产品信息</div>
+            <div className="text-lg font-bold">产品信息</div>
             <Tabs items={items} defaultActiveKey="notice" onChange={onChange} />
           </Card>
         </Space>
