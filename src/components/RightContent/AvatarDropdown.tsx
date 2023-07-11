@@ -1,7 +1,7 @@
 import { outLogin } from '@/services/ant-design-pro/api';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
 import { history, useModel } from '@umijs/max';
-import { Dropdown, Form, Input, Menu, Modal, Popover, Space, Spin } from 'antd';
+import { Form, Input, Modal, Spin } from 'antd';
 
 import { stringify } from 'querystring';
 import type { MenuInfo } from 'rc-menu/lib/interface';
@@ -100,7 +100,6 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
   // }
 
   const menuItems = [
-    
     {
       key: 'changePassword',
       label: '修改密码',
@@ -195,13 +194,12 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
       label: '续费管理',
       key: 'xfgl',
     },
-  ]
+  ];
   const personMenu = [
     {
       label: '人员权限管理',
       key: 'ryqxgl',
     },
-   
   ];
   const supportMenu = [
     {
@@ -216,8 +214,8 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
       label: '我的工单',
       key: 'wdgd',
     },
-  ]
-  
+  ];
+
   return (
     <>
       {/* <Popover content={content} placement="bottomLeft" arrow={false}>
@@ -227,7 +225,7 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
           <div>支持</div>
         </div>
       </Popover> */}
-      <Space className='server mr-5' size='middle'>
+      {/* <Space className='server mr-5' size='middle'>
         <Dropdown menu={{ items: feeMenu }} placement="bottom">
           <div>费用</div>
         </Dropdown>
@@ -237,7 +235,7 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
         <Dropdown menu={{ items: supportMenu }} placement="bottom">
           <div>支持</div>
         </Dropdown>
-      </Space>
+      </Space> */}
 
       {/* <Menu mode="horizontal" items={items} /> */}
       <HeaderDropdown

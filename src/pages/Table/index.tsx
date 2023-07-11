@@ -206,15 +206,15 @@ export default function Table() {
         // columnEmptyText={true}
         dateFormatter="string"
         headerTitle="测试表格"
-        toolBarRender={(action) => {
-          console.log('action', action)
+        toolBarRender={(action: any) => {
+          console.log('action', action);
           return [
             <Button
               key="button"
               icon={<PlusOutlined />}
               onClick={() => {
                 // actionRef.current?.reload();
-                action.reload()
+                action.reload();
               }}
               type="primary"
             >

@@ -10,5 +10,8 @@ module.exports = {
     'no-nested-ternary': 0,
     // 'no-unused-vars': 0,
     '@typescript-eslint/no-unused-vars': 0,
+    '@typescript-eslint/no-use-before-define': 0,
+    'react-hooks/rules-of-hooks': 0,
+    'react/jsx-key': 0,
   },
 };

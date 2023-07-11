@@ -4,12 +4,14 @@
 //     "module": "esnext",
 //     "moduleResolution": "node",
 //     "importHelpers": true,
-//     "jsx": "preserve",
+//     "jsx": "react-jsx",
 //     "esModuleInterop": true,
 //     "sourceMap": true,
 //     "baseUrl": "./",
 //     "skipLibCheck": true,
 //     "experimentalDecorators": true,
+//     "forceConsistentCasingInFileNames": false,
+
 //     "strict": false,
 //     "resolveJsonModule": true,
 //     "allowSyntheticDefaultImports": true,
@@ -21,8 +23,8 @@
 //   },
 //   "include": ["./**/*.d.ts", "./**/*.ts", "./**/*.tsx"],
 //   "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"] //编译排除哪些文件
-
 // }
+
 {
   "compilerOptions": {
     "noImplicitAny": false, // 不需要显示声明 any 类型
@@ -38,11 +40,11 @@
     "resolveJsonModule": true, // 允许编译JSON文件
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": false,
+    "noUnusedLocals": false, //检查只声明、未使用的局部变量(只提示不报错)
     "allowJs": true, //允许js和ts文件混合编译
     "skipLibCheck": true,
     "experimentalDecorators": true,
-    "strict": false, // 严格模式
+    "strict": true, // 严格模式
     // "noEmit": true, // 编译错误时不会生成js代码
     // "isolatedModules": true, // 编译器会将每个文件作为单独的模块使用
     "paths": {

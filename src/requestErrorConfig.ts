@@ -1,6 +1,6 @@
 ﻿import type { RequestOptions } from '@@/plugin-request/request';
 import type { RequestConfig } from '@umijs/max';
-import { message, notification } from 'antd';
+import { message } from 'antd';
 
 // 错误处理方案： 错误类型
 enum ErrorShowType {
@@ -24,13 +24,13 @@ interface ResponseStructure {
  * pro 自带的错误处理， 可以在这里做自己的改动
  * @doc https://umijs.org/docs/max/request#配置
  */
-console.log('url', window.location.origin)
+console.log('url', window.location.origin);
 export const errorConfig: RequestConfig = {
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
     // 'Content-Type': 'application/json;charset=UTF-8'
   },
-  timeout: 60*1000,
+  timeout: 60 * 1000,
   withCredentials: true,
   // baseURL: 'https://xuexi.hzcqt.com',
   // 错误处理： umi@3 的错误处理方案。
@@ -97,8 +97,7 @@ export const errorConfig: RequestConfig = {
   requestInterceptors: [
     (config: RequestOptions) => {
       // 拦截请求配置，进行个性化处理。
-      // const url = config?.url?.concat('?token = 123');
-      return { ...config, };
+      return { ...config };
     },
   ],
 
@@ -111,7 +110,7 @@ export const errorConfig: RequestConfig = {
       if (data?.status === 'fail') {
         message.error(data.message);
       }
-      console.log('responseInterceptors', response)
+      console.log('responseInterceptors', response);
       return response;
     },
   ],
