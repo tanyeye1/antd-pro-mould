@@ -14,10 +14,10 @@ export default defineConfig({
    * @doc https://umijs.org/docs/api/config#hash
    */
   hash: true,
-  // publicPath:  process.env.NODE_ENV === 'production' ? './' : '/' ,
-  // history: {
-  //   type: 'hash'
-  // },
+  publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
+  history: {
+    type: 'hash',
+  },
   /**
    * @name 兼容性设置
    * @description 设置 ie11 不一定完美兼容，需要检查自己使用的所有依赖
@@ -128,7 +128,7 @@ export default defineConfig({
    */
   headScripts: [
     // 解决首次加载时白屏的问题
-    { src: '/scripts/loading.js', async: true },
+    { src: './scripts/loading.js', async: true },
   ],
   //================ pro 插件配置 =================
   presets: ['umi-presets-pro'],

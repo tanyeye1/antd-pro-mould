@@ -1,10 +1,15 @@
-import { login } from '@/services/api';
-import { InfoCircleOutlined, LeftOutlined, LockOutlined, MobileOutlined, UserOutlined } from '@ant-design/icons';
+import {
+  InfoCircleOutlined,
+  LeftOutlined,
+  LockOutlined,
+  MobileOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 import { LoginForm, ProFormCaptcha, ProFormText } from '@ant-design/pro-components';
+import { history } from '@umijs/max';
 import { Button, message, Modal, Radio, Space, Tabs } from 'antd';
 import React, { useState } from 'react';
 import './index.less';
-import { history } from '@umijs/max';
 // import logo from '@/img/logo.png';
 
 const Login: React.FC = () => {
@@ -23,7 +28,7 @@ const Login: React.FC = () => {
   ];
   const handleSubmit = async (values: any) => {
     console.log('values', values);
-    history.push('/home')
+    history.push('/home');
     // await login({
     //   account: values.userAccount,
     //   passwd: values.userPass,
@@ -31,7 +36,6 @@ const Login: React.FC = () => {
     //   console.log('res', res);
     // });
     try {
-      
     } catch (error) {
       message.error('登录失败，请重试！');
     }
@@ -45,16 +49,16 @@ const Login: React.FC = () => {
     setValue(e.target.value);
   };
   const clickBack = () => {
-    console.log('back')
+    console.log('back');
     setOpen(false);
-  }
+  };
   document.title = '登录';
   return (
     <div className="login-container">
       <div className="content">
         <div className="title">
-          <div className="title-h1">安培通企业版</div>
-          <div className="title-h2">安全生产在线培训</div>
+          <div className="title-h1">Test企业版</div>
+          <div className="title-h2">副标题</div>
           <div className="title-h3">随时随地 想学就学</div>
         </div>
         <div className="login-content">
@@ -178,18 +182,22 @@ const Login: React.FC = () => {
             </div>
           </LoginForm>
           {/* 登录modal */}
-          <Modal 
-            open={open} 
-            width={560} 
-            onOk={handleOk} 
+          <Modal
+            open={open}
+            width={560}
+            onOk={handleOk}
             onCancel={handleCancel}
-            footer={<div className='modalFoot'>
-              <Button  className='btn'>登录</Button>
-            </div>}
+            footer={
+              <div className="modalFoot">
+                <Button className="btn">登录</Button>
+              </div>
+            }
             closable={false}
           >
             <div className="modalContent">
-              <div className='modalBack' onClick={clickBack}><LeftOutlined /> &nbsp;返回</div>
+              <div className="modalBack" onClick={clickBack}>
+                <LeftOutlined /> &nbsp;返回
+              </div>
               <div className="modalHead">
                 <h2>选择账号登录</h2>
                 <div className="headTip">匹配到多个账号，请在其中选择一个登录</div>
