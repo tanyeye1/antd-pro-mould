@@ -24,7 +24,6 @@ export async function getInitialState(): Promise<{
     settings: defaultSettings as Partial<LayoutSettings>,
   };
 }
-
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 export const layout: any = ({ initialState, setInitialState }) => {
   return {
