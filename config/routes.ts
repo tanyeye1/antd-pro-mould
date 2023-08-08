@@ -22,32 +22,32 @@ export default [
         routes: [
           { path: '/admin/sub-page', redirect: '/admin/sub-page/test' },
           { name: '三级测试页', path: '/admin/sub-page/test', component: './Table' },
+          { name: '地图', path: '/admin/sub-page/map', component: './Map' },
         ],
       },
     ],
   },
-  {
-    name: '组织架构',
-    path: '/organizationalStructure',
-    routes: [
-      { path: '/organizationalStructure', redirect: '/organizationalStructure/department' },
-      {
-        name: '部门管理',
-        path: '/organizationalStructure/department',
-        iframeUrl: '/company/dept/list.do',
-        component: './OldPage',
-        icon: 'https://img2.baidu.com/it/u=567357414,4240886412&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500',
-      },
-    ],
-  },
- 
+  // {
+  //   name: '组织架构',
+  //   path: '/organizationalStructure',
+  //   routes: [
+  //     { path: '/organizationalStructure', redirect: '/organizationalStructure/department' },
+  //     {
+  //       name: '部门管理',
+  //       path: '/organizationalStructure/department',
+  //       iframeUrl: '/company/dept/list.do',
+  //       component: './OldPage',
+  //       icon: 'https://img2.baidu.com/it/u=567357414,4240886412&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500',
+  //     },
+  //   ],
+  // },
 
   { path: '/welcome', icon: 'smile', component: './Welcome' },
   {
     // path 支持为一个 url，必须要以 http 开头
-    path: 'https://www.zjaqsc.com/dashboard.do',
+    path: 'https://tanyeye1.github.io/',
     target: '_blank', // 点击新窗口打开
-    name: '文档',
+    name: '博客',
   },
   // {
   //   path: '/admin',

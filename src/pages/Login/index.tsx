@@ -57,9 +57,9 @@ const Login: React.FC = () => {
     <div className="login-container">
       <div className="content">
         <div className="title">
-          <div className="title-h1">Test企业版</div>
+          <div className="title-h1">Test</div>
           <div className="title-h2">副标题</div>
-          <div className="title-h3">随时随地 想学就学</div>
+          <div className="title-h3"></div>
         </div>
         <div className="login-content">
           <LoginForm
