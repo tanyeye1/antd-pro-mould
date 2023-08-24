@@ -102,7 +102,6 @@ export default function MapDemo() {
   };
   return (
     <PageContainer>
-      <div id="myChart" style={{ width: '100%', height: '400px' }}></div>
       <Space>
         <Button onClick={clear}>清除所有覆盖物</Button>
         <Button onClick={create}>新建多边形</Button>

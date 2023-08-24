@@ -33,7 +33,6 @@ const FlvPlayer: FC<IFlvPlayerProps> = ({
       player.play();
     }
   }, [config, mediaDataSource, type, url]);
-  console.log('url1', url);
   return <video {...restProps} ref={videoElementRef} muted={true}></video>;
 };
 export default function index() {
