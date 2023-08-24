@@ -55,6 +55,7 @@ export default function Home() {
       {/* 首页左边 */}
       <div className="leftContent ">
         {/* 数据展示 */}
+
         <div className="dataShow flex flex-wrap justify-between  ">
           <Card className="shadow flex-1 hover:shadow-lg">
             <div className="text-lg font-bold mb-5">安全培训</div>

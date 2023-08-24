@@ -6,6 +6,7 @@ import defaultSettings from '../config/defaultSettings';
 import './app.css';
 import { AvatarDropdown } from './components/RightContent/AvatarDropdown';
 import { errorConfig } from './requestErrorConfig';
+
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 

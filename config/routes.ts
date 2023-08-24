@@ -21,8 +21,11 @@ export default [
         // component: './Admin',
         routes: [
           { path: '/admin/sub-page', redirect: '/admin/sub-page/test' },
+          { name: '可视化页面', path: '/admin/sub-page/echarts', component: './EChartsDemo' },
           { name: '三级测试页', path: '/admin/sub-page/test', component: './Table' },
+          { name: '蜂鸟地图', path: '/admin/sub-page/fengmap', component: './Fengmap' },
           { name: '地图', path: '/admin/sub-page/map', component: './Map' },
+          { name: '地图2', path: '/admin/sub-page/map2', component: './Map/MapDemo' },
         ],
       },
     ],

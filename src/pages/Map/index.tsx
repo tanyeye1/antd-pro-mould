@@ -2,8 +2,8 @@ import AMapLoader from '@amap/amap-jsapi-loader';
 import { PageContainer } from '@ant-design/pro-components';
 import { Button, Space } from 'antd';
 import { useEffect, useState } from 'react';
-
-export default function index() {
+import './index.less';
+export default function Index() {
   const [AMap, setAMap] = useState<any>(false);
   const [map, setMap] = useState<any>();
   const [infoWindow, setInfoWindow] = useState<any>();
@@ -16,12 +16,11 @@ export default function index() {
     AMapLoader.load({
       key: 'f215f24406e8c4bcc40160150bb97c04', // 替换成你的高德API Key
       version: '2.0', // 高德API版本号
-
       plugins: ['AMap.Driving', 'AMap.PolygonEditor'], // 如果需要使用地图的插件，可以在这里添加插件的名称，例如 ['AMap.Geocoder']
     }).then((AMap) => {
       // 在这里可以使用 AMap 对象进行地图相关的操作
       const map = new AMap.Map('map-container', {
-        center: [116.475311, 39.999749],
+        // center: [116.475311, 39.999749],
         zoom: 16.8,
         resizeEnable: true,
       });
@@ -93,16 +92,21 @@ export default function index() {
       //   // 未出错时，result即是对应的路线规划方案
       //   console.log('driving', status, result);
       // });
-      let infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });
+      let infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(14, -45) });
       setInfoWindow(infoWindow);
       map.on('click', function (ev) {
         console.log('click', ev);
         const { lnglat } = ev;
         let marker = new AMap.Marker({
           position: new AMap.LngLat(lnglat.lng, lnglat.lat), // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
-          // content: `经度${lnglat.lng}纬度${lnglat.lng}`
+          // content: `经度${lnglat.lng}纬度${lnglat.lng}`,
+          icon: 'https://webapi.amap.com/images/car.png',
+          autoRotation: true,
+          angle: -90,
         });
-        (marker.content = `经度${lnglat.lng}纬度${lnglat.lng}`), map.add(marker);
+        // 经度${lnglat.lng}纬度${lnglat.lat}
+        marker.content = `经度${lnglat.lng}纬度${lnglat.lat}`;
+        map.add(marker);
         // marker.setMap(map);
         marker.on('click', markerClick);
       });
@@ -110,6 +114,10 @@ export default function index() {
         infoWindow.setContent(e.target.content);
         infoWindow.open(map, e.target.getPosition());
       }
+      const testContent = `<div class='box' style="padding: 20px" >
+      <div>111</div>
+      <div>222</div>
+      </div>`;
       let path2 = [
         [116.474595, 40.001321],
         [116.473526, 39.999865],
@@ -165,13 +173,20 @@ export default function index() {
       },
     );
   };
+  const clear = () => {
+    map.clearMap();
+  };
   return (
     <PageContainer>
+
       <Space>
         <Button onClick={onClick}>点击</Button>
+        <Button onClick={clear}>清除所有覆盖物</Button>
       </Space>
       <div id="map-container" style={{ width: '100%', height: '400px', marginTop: 10 }}></div>
       <div id="panel"></div>
+      <div className='box'>测试</div>
+
     </PageContainer>
   );
 }

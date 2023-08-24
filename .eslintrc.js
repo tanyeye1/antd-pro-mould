@@ -13,5 +13,6 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 0,
     'react-hooks/rules-of-hooks': 0,
     'react/jsx-key': 0,
+    '@typescript-eslint/no-unused-expressions': 0,
   },
 };

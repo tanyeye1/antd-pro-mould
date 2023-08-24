@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>楼层控件</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://developer.fengmap.com/fmAPI/demos/libs/js/fengmap.map.min.js"></script>
+    <script src="https://developer.fengmap.com/fmAPI/demos/libs/js/fengmap.plugin.ui.min.js"></script>
+    <link rel="stylesheet" href="https://developer.fengmap.com/fmAPI/demos/libs/css/index.css">
+    <link rel="stylesheet" href="https://developer.fengmap.com/fmAPI/demos/libs/css/toolBarStyle.css">
+</head>
+
+<body>
+   
+    <div id="fengmap"></div>
+</body>
+<script>
+    var map;
+    var options = {
+        container: document.getElementById('fengmap'),
+        appName: '蜂鸟研发SDK_2_0',
+        key: '57c7f309aca507497d028a9c00207cf8',
+        mapID: '1514920297309614082',
+        themeID: '1580453922356207618',
+        level: 3,
+        mapZoom: 19.5
+    }
+    map = new fengmap.FMMap(options);
+    map.on('loaded', function () {
+
+        var scrollFloorCtlOpt = {
+            position: fengmap.FMControlPosition.RIGHT_TOP,
+            floorButtonCount: 5,
+            offset: {
+                x: -20,
+                y: 80
+            },
+            viewModeControl: true,
+            floorModeControl: true,
+            needAllLayerBtn: true
+
+        };
+        scrollFloorControl = new fengmap.FMToolbar(scrollFloorCtlOpt);
+        scrollFloorControl.addTo(map)
+
+    });
+</script>
+
+</html>
