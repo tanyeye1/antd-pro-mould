@@ -26,6 +26,7 @@ export default [
           { name: '蜂鸟地图', path: '/admin/sub-page/fengmap', component: './Fengmap' },
           { name: '地图', path: '/admin/sub-page/map', component: './Map' },
           { name: '地图2', path: '/admin/sub-page/map2', component: './Map/MapDemo' },
+          { name: '低代码', path: '/admin/sub-page/amis', component: './Amis' },
         ],
       },
     ],

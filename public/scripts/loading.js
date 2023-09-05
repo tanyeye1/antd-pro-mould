@@ -137,7 +137,7 @@
           width: 14px;
           height: 14px;
         }
-
+        
         @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
           .ant-spin-blur {
             background: #fff;

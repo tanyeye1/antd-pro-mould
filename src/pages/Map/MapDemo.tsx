@@ -1,8 +1,7 @@
 import AMapLoader from '@amap/amap-jsapi-loader';
 import { PageContainer } from '@ant-design/pro-components';
-import { Button, Space } from 'antd';
+import { Button, Image, Space } from 'antd';
 import { useEffect, useState } from 'react';
-import echarts from 'echarts';
 
 export default function MapDemo() {
   const [map, setMap] = useState<any>();
@@ -63,7 +62,7 @@ export default function MapDemo() {
   const line = () => {
     // console.log('getPolygon', polyEditor.getTarget());
     // polyEditor.getTarget()
-    var marker,
+    let marker,
       lineArr = [
         [116.478935, 39.997761],
         [116.478939, 39.997825],
@@ -127,6 +126,13 @@ export default function MapDemo() {
         <Button onClick={line}>轨迹</Button>
         <Button onClick={openIndoor}>室内地图</Button>
       </Space>
+      <Image
+        width={100}
+        src={
+          'https://k.sinaimg.cn/n/sinakd20230810s/10/w690h920/20230810/2999-d8abc964229e092d7e64de9c66ca75d9.jpg/w700d1q75cms.jpg?by=cms_fixed_width'
+        }
+      />
+
       <div id="map-container" style={{ width: '100%', height: '400px', marginTop: 10 }}></div>
     </PageContainer>
   );
