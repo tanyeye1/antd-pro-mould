@@ -58,7 +58,7 @@ const Login: React.FC = () => {
       <div className="content">
         <div className="title">
           <div className="title-h1">Test</div>
-          <div className="title-h2">副标题</div>
+          <div className="title-h2">副标题111</div>
           <div className="title-h3"></div>
         </div>
         <div className="login-content">
